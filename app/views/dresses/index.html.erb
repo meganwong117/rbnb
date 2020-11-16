@@ -1,0 +1,8 @@
+<h2>Dresses for every occasion</h2>
+
+<% @dresses.each do |dress| %>
+  <p><%= dress.description %></p>
+  <p><%= dress.price %></p>
+  <p><%= dress.size %></p>
+  <p><%= dress.event_type %>
+<% end %>
