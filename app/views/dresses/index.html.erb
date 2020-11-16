@@ -1,6 +1,7 @@
 <h2>Dresses for every occasion</h2>
 
 <% @dresses.each do |dress| %>
+  <h3><%= dress.name %></h3>
   <p><%= dress.description %></p>
   <p><%= dress.price %></p>
   <p><%= dress.size %></p>
