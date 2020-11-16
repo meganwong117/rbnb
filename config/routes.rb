@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # get 'dresses', to: 'dresses#create'
   # get 'dresses/:dress_id', to: 'dresses#show', as: :dress
   resources :dresses
+  resources :bookings
 end
