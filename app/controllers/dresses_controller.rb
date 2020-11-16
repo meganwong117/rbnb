@@ -1,5 +1,5 @@
 class DressesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  before_action :set_dress, only: :show
   def index
     @dresses = Dress.all
   end
@@ -17,11 +17,14 @@ class DressesController < ApplicationController
     end
   end
 
-  # def show
-  #   @dress = Dress.find(params[:dress_id])
-  # end
+  def show
+  end
 
   private
+
+  def set_dress
+    @dress = Dress.find(params[:id])
+  end
 
   def dress_params
     params.require(:dress).permit(:description, :price, :size, :event_type)
