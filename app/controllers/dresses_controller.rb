@@ -10,6 +10,7 @@ class DressesController < ApplicationController
 
   def create
     @dress = Dress.new(dress_params)
+    @dress.user = current_user
     if @dress.save
       redirect_to dress_path(@dress)
     else
