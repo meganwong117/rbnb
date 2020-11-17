@@ -11,8 +11,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @dress = Dress.find(params[:dress_id])
     @booking.dress = @dress
-    @booking.save
-    redirect_to dress_path(@dress)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render "dresses/show"
+    end
   end
 
   def show
@@ -20,6 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:created_date, :end_date)
+    params.require(:booking).permit( :created_date, :end_date)
   end
 end
