@@ -3,9 +3,11 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+
   def new
     @booking = Booking.new
   end
+
 
   def create
     @booking = Booking.new(booking_params)
@@ -21,6 +23,10 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+
+  def destroy
   end
 
   def booking_params
