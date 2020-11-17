@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get 'dresses/new', to: 'dresses#new'
   # get 'dresses', to: 'dresses#create'
   # get 'dresses/:dress_id', to: 'dresses#show', as: :dress
-  resources :dresses
-  resources :bookings
+  resources :dresses do
+    resources :bookings, only: [ :new, :create ]
+  end
 end

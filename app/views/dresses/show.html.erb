@@ -1,13 +1,11 @@
-<div>
-  <% @dress.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+<h2><%= @dress.name %></h2>
+<p><%= @dress.description %></p>
+<p><%= @dress.price %></p>
+<p><%= @dress.size %></p>
+<p><%= @dress.event_type %></p>
 
-  <h2><%= @dress.name %></h2>
-  <p><%= @dress.description %></p>
-  <p><%= @dress.price %></p>
-  <p><%= @dress.size %></p>
-  <p><%= @dress.event_type %></p>
-</div>
-
-<%= link_to 'Back to dresses', dresses_path(@dress) %>
+<%= simple_form_for [@dress, @booking] do |f| %>
+  <%= f.input :created_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
