@@ -1,6 +1,9 @@
 <h2>Dresses for every occasion</h2>
 
 <% @dresses.each do |dress| %>
+  <% dress.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <h3><%= dress.name %></h3>
   <p><%= dress.description %></p>
   <p><%= dress.price %></p>
