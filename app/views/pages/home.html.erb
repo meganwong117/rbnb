@@ -1,9 +1,9 @@
-<!-- add a banner here! -->
-<div class="container mt-5 pb-5">
-  <h2>DressBnB</h2>
-  <%= link_to 'Sign in', new_user_session_path %>
-  <br>
-  <%= link_to 'Ready to dress to impress?', new_user_registration_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg);">
+  <div class="container">
+    <h1>DressBnB</h1>
+    <br>
+    <%= link_to 'Dress to impress', new_user_registration_path, class: "btn btn-flat" %>
+  </div>
 </div>
 
 <% @dresses.each do |dress| %>
