@@ -1,4 +1,9 @@
 <h2><%= @dress.name %></h2>
+
+<% @dress.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <p><%= @dress.description %></p>
 <p><%= @dress.price %></p>
 <p><%= @dress.size %></p>
@@ -10,8 +15,6 @@
   <%= f.button :submit %>
 <% end %>
 
-<% @dress.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
 
 <%= link_to 'Back to dresses', dresses_path(@dress) %>
