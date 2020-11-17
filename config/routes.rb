@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :dresses do
     resources :bookings, only: [ :new, :create ]
   end
+  resources :bookings, only: [ :index]
 end

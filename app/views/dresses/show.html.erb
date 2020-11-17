@@ -4,8 +4,14 @@
 <p><%= @dress.size %></p>
 <p><%= @dress.event_type %></p>
 
-<%= simple_form_for [@dress, @booking] do |f| %>
+<%= simple_form_for([@dress, @booking]) do |f| %>
   <%= f.input :created_date %>
   <%= f.input :end_date %>
   <%= f.button :submit %>
 <% end %>
+
+<% @dress.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%= link_to 'Back to dresses', dresses_path(@dress) %>
