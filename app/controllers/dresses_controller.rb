@@ -1,6 +1,6 @@
 class DressesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_dress, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show, :edit, :update]
+  before_action :set_dress, only: [:show, :edit, :create]
   def index
     @dresses = Dress.all
   end
@@ -21,6 +21,15 @@ class DressesController < ApplicationController
 
   def show
     @booking = Booking.new
+  end
+
+  def edit
+  end
+
+  def update
+    @dress = Dress.find(params[:id])
+    @dress.update(dress_params)
+    redirect_to dress_path(@dress)
   end
 
   def destroy
