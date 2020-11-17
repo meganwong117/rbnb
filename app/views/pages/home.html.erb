@@ -7,9 +7,7 @@
 </div>
 
 <% @dresses.each do |dress| %>
-  <% dress.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+  <%= cl_image_tag dress.photos.first.key, height: 300, width: 400, crop: :fill %>
   <h3><%= dress.name %></h3>
   <p><%= dress.description %></p>
   <p><%= dress.price %></p>
