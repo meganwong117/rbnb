@@ -1,4 +1,5 @@
 class DressesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_dress, only: :show
   def index
     @dresses = Dress.all
@@ -18,6 +19,11 @@ class DressesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @dress.destroy
+    redirect_to dresses_path
   end
 
   private

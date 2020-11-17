@@ -9,4 +9,5 @@
   <p><%= dress.price %></p>
   <p><%= dress.size %></p>
   <p><%= dress.event_type %></p>
+  <%= link_to "Remove Dress", dress_path(dress), method: :delete, data: {confirm: "Are you sure you want to delete this dress?"} %>
 <% end %>
