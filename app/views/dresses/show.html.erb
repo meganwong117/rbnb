@@ -3,3 +3,10 @@
 <p><%= @dress.price %></p>
 <p><%= @dress.size %></p>
 <p><%= @dress.event_type %></p>
+
+<%= simple_form_for [@dress, @booking] do |f| %>
+  <%= f.input :created_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
+
