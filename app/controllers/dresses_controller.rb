@@ -1,6 +1,6 @@
 class DressesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_dress, only: [:show, :edit, :create]
+  before_action :set_dress, only: [:show, :edit]
   def index
     @dresses = Dress.all
   end
