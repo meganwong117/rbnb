@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   def home
-    # render template: "dresses/index"
+    @dresses = Dress.all
   end
 end
