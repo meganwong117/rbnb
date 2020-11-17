@@ -3,7 +3,12 @@
 <% @bookings.each do |booking| %>
   <p><%= booking.created_date %></p>
   <p><%= booking.end_date %></p>
+  <p><%= booking.dress.name%></p>
+  <p><%= booking.dress.description %></p>
+
+  <%= link_to "Edit Booking", edit_booking_path(booking) %>
   <%= link_to "Cancel Booking", "booking_path", method: :delete %>
+
 <% end %>
 
 
