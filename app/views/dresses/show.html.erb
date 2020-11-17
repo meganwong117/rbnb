@@ -1,7 +1,7 @@
 <h2><%= @dress.name %></h2>
 
 <% @dress.photos.each do |photo| %>
-  <% if dress.photos.any? %>
+  <%if dress.photos.any? %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 <% end %>
