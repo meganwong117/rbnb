@@ -2,6 +2,8 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 700px;
+  position: relative;
 }
 
 .banner h1 {
@@ -17,4 +19,10 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-header {
+  position: absolute;
+  left: 100px;
+  bottom: 200px;
 }
