@@ -1,4 +1,5 @@
 class DressesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_dress, only: :show
   def index
     @dresses = Dress.all
@@ -10,6 +11,7 @@ class DressesController < ApplicationController
 
   def create
     @dress = Dress.new(dress_params)
+    @dress.user = current_user
     if @dress.save
       redirect_to dress_path(@dress)
     else
@@ -21,6 +23,11 @@ class DressesController < ApplicationController
     @booking = Booking.new
   end
 
+  def destroy
+    @dress.destroy
+    redirect_to dresses_path
+  end
+
   private
 
   def set_dress
@@ -28,6 +35,6 @@ class DressesController < ApplicationController
   end
 
   def dress_params
-    params.require(:dress).permit(:description, :price, :size, :event_type)
+    params.require(:dress).permit(:name, :description, :price, :size, :event_type, photos: [])
   end
 end

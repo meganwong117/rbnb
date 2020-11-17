@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- add a banner here! -->
+<div class="container mt-5 pb-5">
+  <h2>DressBnB</h2>
+  <%= link_to 'Sign in', new_user_session_path %>
+  <br>
+  <%= link_to 'Ready to dress to impress?', new_user_registration_path %>
+</div>
+
+<% @dresses.each do |dress| %>
+  <% dress.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h3><%= dress.name %></h3>
+  <p><%= dress.description %></p>
+  <p><%= dress.price %></p>
+  <p><%= dress.size %></p>
+  <p><%= dress.event_type %></p>
+<% end %>
