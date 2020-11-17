@@ -4,4 +4,5 @@
 <% @bookings.each do |booking| %>
   <p><%= booking.created_date %></p>
   <p><%= booking.end_date %></p>
+  <%= link_to "Cancel Booking", "booking_path", method: :delete %>
 <% end %>
