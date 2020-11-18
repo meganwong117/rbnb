@@ -16,7 +16,7 @@
   top: 0;
   z-index: 1000;
   background-color: transparent;
-  a {
+  .nav-link {
   color: white !important;
   }
   width: 100%;
@@ -26,7 +26,7 @@
 
 .navbar-white {
   background-color: white !important;
-  a {
+  .nav-link {
     color: black !important;
   }
 }
