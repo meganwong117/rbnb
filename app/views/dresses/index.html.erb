@@ -20,9 +20,9 @@
           <p><%= dress.size %></p>
           <p>RETAIL: <%= dress.retail_price %></p>
           <p><% dress.event_type %></p>
-          <%= link_to "Remove Dress", dress_path(dress), method: :delete, data: {confirm: "Are you sure you want to delete this dress?"}, class: "btn btn-flat" %>
-          <%= link_to "Edit Dress", edit_dress_path(dress), class: "btn btn-flat" %>
         </div>
       </div>
     <% end %>
 </div>
+
+<%= link_to "Write a story", "#", class: "btn btn-ghost" %>
