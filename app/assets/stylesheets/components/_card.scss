@@ -20,11 +20,13 @@ h2 {
 h2 {
   font-size: 18px;
   }
+}
 
 .cards {
   padding-left: 58px;
   padding-bottom: 15px;
   margin-bottom: 15px;
+}
 
 .dress-card {
   overflow: hidden;
@@ -51,7 +53,6 @@ h2 {
   margin: 0;
 }
 
-
 .dress-card .dress-card-info {
   padding: 16px;
   // display: flex;
@@ -60,7 +61,7 @@ h2 {
   position: relative;
 }
 
-.card-bottom{
+.card-bottom {
   display: flex;
   justify-content: space-between;
 }
