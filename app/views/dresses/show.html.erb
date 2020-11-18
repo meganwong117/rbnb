@@ -12,10 +12,10 @@
 <div class="container" style ="background: #7C7C7C;">
   <div class="dressimage">
     <% @dress.photos.each do |photo| %>
-  <%if @dress.photos.any? %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%if @dress.photos.any? %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </div>
 

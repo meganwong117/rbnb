@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :dresses
+  has_many :borrowed_dresses, through: :bookings, class_name:"Dress", source: :user
 end
