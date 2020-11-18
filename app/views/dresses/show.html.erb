@@ -1,17 +1,23 @@
-<h2><%= @dress.name %></h2>
 
-<% @dress.photos.each do |photo| %>
-  <%if @dress.photos.any? %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
+<div class="productpagetitle" style="position:fixed; left: 575px;">
+  <h1><%= @dress.name %></h1>
+  <p><%= @dress.description %></p>
+  <p><%= @dress.price %></p>
+  <p><%= @dress.size %></p>
+  <p><%= @dress.currency %></p>
+  <p>RETAIL:<% @dress.retail_price %></p>
+  <p><%= @dress.event_type %></p>
+</div>
 
-<p><%= @dress.description %></p>
-<p><%= @dress.price %></p>
-<p><%= @dress.size %></p>
-<p><%= @dress.currency %></p>
-<p>RETAIL:<% @dress.retail_price %></p>
-<p><%= @dress.event_type %></p>
+<div class="container" style ="background: #7C7C7C;">
+  <div class="dressimage">
+    <% @dress.photos.each do |photo| %>
+      <%if @dress.photos.any? %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <%= simple_form_for([@dress, @booking]) do |f| %>
   <%= f.input :created_date %>
@@ -21,3 +27,7 @@
 
 
 <%= link_to 'Back to dresses', dresses_path(@dress) %>
+
+
+
+
