@@ -10,3 +10,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+  a {
+  color: white !important;
+  }
+  width: 100%;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.navbar-white {
+  background-color: white !important;
+  a {
+    color: black !important;
+  }
+}
