@@ -6,10 +6,8 @@
   </div>
 </div>
 
-<div class="cards">
-  <div class="row align-items-center">
+<div class="cards cards-grid">
     <% @dresses.each do |dress| %>
-      <div class="col-3">
         <div class="dress-card">
           <% if dress.photos.any? %>
             <%= cl_image_tag dress.photos.first.key, height: 280, width: 280, crop: :fill %>
@@ -27,5 +25,4 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>
