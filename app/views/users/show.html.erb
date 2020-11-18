@@ -9,3 +9,7 @@
 <% end %>
 
 
+<h1>My Rented dresses</h1>
+<%  @my_bookings.each do |booking|%>
+<%= booking.dress.name %>
+<% end  %>
