@@ -2,7 +2,13 @@
   <div class="banner-header">
     <h1>DressBnB</h1>
     <br>
-    <%= link_to 'Dress to impress', new_user_registration_path, class: "btn btn-flat" %>
+    <div class="btn btn-flat">
+      <% if user_signed_in? %>
+        <%= link_to 'Dress to impress', dresses_path %>
+      <% else %>
+        <%= link_to 'Dress to impress', new_user_registration_path %>
+      <% end %>
+    </div>
   </div>
 </div>
 
