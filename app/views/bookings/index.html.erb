@@ -1,11 +1,16 @@
-<h2>Your bookings</h2>
+<h2 style="text-align: center">Your bookings</h2>
 
-<% @bookings.each do |booking| %>
-  <p><%= booking.created_date %></p>
-  <p><%= booking.end_date %></p>
-  <p><%= booking.dress.name%></p>
-  <p><%= booking.dress.description %></p>
+<div class="card-booking">
+  <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScsN67mNvYz515eEL7j8-ypSFrUQtjt_6xbg&usqp=CAU">
+  <div class="card-booking-infos">
+    <% @bookings.each do |booking| %>
+      <p><%= booking.created_date.strftime("%A, %B %e, %Y") %></p>
+      <p><%= booking.end_date.strftime("%A, %B %e, %Y") %></p></tr>
+      <p><%= booking.dress.name %></p>
+      <p><%= booking.dress.description %></p>
+      <%= link_to "Edit Booking", edit_booking_path(booking) %>
+      <%= link_to "Cancel Booking", booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to "Edit Booking", edit_booking_path(booking) %>
-  <%= link_to "Cancel Booking", booking, method: :delete, data: { confirm: 'Are you sure?' }  %>
-<% end %>
