@@ -1,15 +1,67 @@
+
 <h1>My dresses</h1>
-<% @dresses.each do |dress| %>
-  <p><%= dress.name %></p>
-<% end %>
+  <div class= "cards">
+    <div class= "row align-items-center">
+      <% @dresses.each do |dress| %>
+        <div class="col-3">
+          <div class="dress-card">
+            <%if dress.photos.any? %>
+              <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+            <% end %>
+            <div class="dress-card-info">
+              <h3><%= dress.name %></h3>
+              <p><%= dress.description %></p>
+              <p><%= dress.price %></p>
+              <p><%= dress.size %></p>
+              <div class="card-bottom">
+              <p><% dress.event_type %></p>
+                <% if @my_bookings.where('dress_id = ?', dress.id).present? %>
+                  <p>Rented</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<h1>My borrowed dresses</h1>
-<% @borrowed_dresses.each do |dress| %>
-  <p><%= dress.name %></p>
-<% end %>
+
+<h1>My Bookings</h1>
+<div class= "cards">
+  <div class= "row align-items-center">
+    <% @borrowed_dresses.each do |dress| %>
+     <div class="col-3">
+       <div>
+          <%if dress.photos.any? %>
+            <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+          <% end %>
+          <h3><%= dress.name %></h3>
+          <p><%= dress.description %></p>
+          <p><%= dress.price %></p>
+          <p><%= dress.size %></p>
+          <p><% dress.event_type %></p>
+        </div>
+        </div>
+    <% end %>
+  </div>
+</div>
 
 
-<h1>My Rented dresses</h1>
-<%  @my_bookings.each do |booking|%>
-<%= booking.dress.name %>
-<% end  %>
+<!-- <h1>My Rented dresses</h1>
+<div class= "cards">
+  <div class= "row align-items-center">
+    <%  @my_bookings.each do |booking|%>
+    <div class="col-3">
+       <div>
+          <%if booking.dress.photos.any? %>
+            <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+          <% end %>
+          <h3><%= booking.dress.name %></h3>
+          <p><%= booking.dress.description %></p>
+          <p><%= booking.dress.price %></p>
+          <p><%= booking.dress.size %></p>
+          <p><% booking.dress.event_type %></p>
+        </div>
+        </div>
+<% end  %> -->
