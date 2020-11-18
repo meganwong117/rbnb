@@ -1,33 +1,38 @@
-
-<div class="productpagetitle" style="position:fixed; left: 575px;">
-  <h1><%= @dress.name %></h1>
-  <p><%= @dress.description %></p>
-  <p><%= @dress.price %></p>
-  <p><%= @dress.size %></p>
-  <p><%= @dress.currency %></p>
-  <p>RETAIL:<% @dress.retail_price %></p>
-  <p><%= @dress.event_type %></p>
-</div>
-
-<div class="container" style ="background: #7C7C7C;">
-  <div class="dressimage">
-    <% @dress.photos.each do |photo| %>
-      <%if @dress.photos.any? %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
+<div class="container">
+  <div class="row">
+    <%if @dress.photos.any? %>
+      <div class="col left" style="background-image: url('<%= cl_image_path @dress.photos.first.key %>')" >
+    <%else %>
+      <div class="col left" style="background-image: url('https://images.unsplash.com/photo-1524048269000-9949b9a70cb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')" >
     <% end %>
+    </div>
+    <div class="col right text-center" >
+      <div class="titlesize">
+        <h1><%= @dress.name %></h1>
+        <p><%= @dress.size %></p>
+        <p><%= @dress.event_type %></p>
+      </div>
+      <div class="paragraph">
+        <p><%= @dress.description %></p>
+      </div>
+      <div class="dressprice">
+        <p><%= @dress.price%> <%= @dress.currency%></p>
+        <p>RETAIL:<% @dress.retail_price %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="dress-booking-form" class="col left text-center" >
+      <div class="form">
+        <%= simple_form_for([@dress, @booking]) do |f| %>
+          <%= f.input :created_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <%= link_to 'Back to dresses', dresses_path(@dress) %>
+    </div>
   </div>
 </div>
-
-<%= simple_form_for([@dress, @booking]) do |f| %>
-  <%= f.input :created_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit %>
-<% end %>
-
-
-<%= link_to 'Back to dresses', dresses_path(@dress) %>
-
-
 
 
