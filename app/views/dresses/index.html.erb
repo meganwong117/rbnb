@@ -1,18 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Dresses for every occasion</h2>
-
-<% @dresses.each do |dress| %>
-  <%if dress.photos.any? %>
-    <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-  <% end %>
-  <h3><%= dress.name %></h3>
-  <p><%= dress.description %></p>
-  <p><%= dress.price %></p>
-  <p><%= dress.size %></p>
-  <p><%= dress.event_type %></p>
-  <%= link_to "Remove Dress", dress_path(dress), method: :delete, data: {confirm: "Are you sure you want to delete this dress?"} %>
-  <%= link_to "Edit Dress", edit_dress_path(dress) %>
-  <%= link_to "See Dress", dress_path(dress) %>
-<% end %>
-
+<div class= "cards">
+  <div class= "row align-items-center">
+    <% @dresses.each do |dress| %>
+      <div class="col-3">
+        <div class="dress-card">
+          <%if dress.photos.any? %>
+            <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+          <% end %>
+          <div class="dress-card-info">
+            <h3><%= dress.name %></h3>
+            <p><%= dress.description %></p>
+            <p><%= dress.price %></p>
+            <p><%= dress.size %></p>
+            <p><%= dress.event_type %></p>
+            <%= link_to "Remove Dress", dress_path(dress), method: :delete, data: {confirm: "Are you sure you want to delete this dress?"} %>
+            <%= link_to "Edit Dress", edit_dress_path(dress) %>
+            <%= link_to "See Dress", dress_path(dress) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

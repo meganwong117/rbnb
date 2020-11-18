@@ -9,17 +9,19 @@
   <div class= "row align-items-center">
     <% @dresses.each do |dress| %>
       <div class="col-3">
-        <div>
+        <div class="dress-card">
           <%if dress.photos.any? %>
             <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
           <% end %>
-          <h3><%= dress.name %></h3>
-          <p><%= dress.description %></p>
-          <p><%= dress.price %></p>
-          <p><%= dress.size %></p>
-          <p><% dress.event_type %></p>
+            <div class="dress-card-info">
+              <h3><%= dress.name %></h3>
+              <p><%= dress.description %></p>
+              <p><%= dress.price %></p>
+              <p><%= dress.size %></p>
+              <p><% dress.event_type %></p>
+            </div>
         </div>
-        </div>
+      </div>
     <% end %>
   </div>
 </div>

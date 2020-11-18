@@ -1,3 +1,50 @@
-.cards {
-padding-left: 58px;
+.cards{
+  padding-left: 58px;
 }
+
+.dress-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width:250px;
+  border-radius:4px;
+}
+
+.dress-card > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.dress-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dress-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.dress-card .dress-card-info {
+  padding: 16px;
+  // display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+// .card-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+
