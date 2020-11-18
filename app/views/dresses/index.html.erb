@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h2 style="text-align: center">Dresses for every occasion</h2>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg); margin-top: -15px; margin-bottom: 50px;">
+  <div class="banner-header">
+    <h2>Dresses for every occasion</h2>
+  </div>
+</div>
 
 <div class="cards">
   <div class="row align-items-center">
@@ -8,7 +12,7 @@
       <div class="col-3">
         <div>
           <% if dress.photos.any? %>
-            <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+            <%= cl_image_tag dress.photos.first.key, height: 280, width: 280, crop: :fill %>
         <% end %>
         <h3><%= dress.name.upcase %></h3>
         <p><%= dress.description %></p>
