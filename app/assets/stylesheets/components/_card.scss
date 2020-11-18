@@ -25,11 +25,11 @@ h2 {
   }
 }
 
-.cards {
-  padding-left: 58px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
+// .cards {
+//   padding-left: 58px;
+//   padding-bottom: 15px;
+//   margin-bottom: 15px;
+// }
 
 a {
   text-decoration:none;
@@ -44,6 +44,7 @@ a:hover {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin:auto;
 }
 
 .dress-card {
