@@ -2,7 +2,9 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
+  <%= f.input :currency, collection: Dress::CURRENCIES %>
   <%= f.input :size %>
+  <%= f.input :retail_price %>
   <%= f.input :event_type %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit %>
