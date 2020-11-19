@@ -29,12 +29,13 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
-  background: #8575A9;
+  background: #A58BFE;
   color: white;
 }
   .submit-button:hover {
-  background: #A58BFE;
+  background: #9678FE;
   color: white;
+  transition: opacity 0.3s ease;
 }
 
 .home-search {
