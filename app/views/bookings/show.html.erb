@@ -1,19 +1,118 @@
+<!-- <div class="container p-3">
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="left" style="line-height: 24px; padding-top: 25px;">
+        <h2>Thank You For Your Order!</h2>
+        <p>Order Total: GBP <%= @dress.price %></p>
+      </td>
+      <td align="left" style="line-height: 24px; padding-top: 25px;">
+        <%= link_to "Manage your bookings", user_path(@user), class: "button-primary" %>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding-top: 20px;">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+              <td width="75%" align="left" style="line-height: 24px; padding: 10px;"> Booking Confirmation # </td>
+              <td width="25%" align="left" style="line-height: 24px; padding: 10px;"><%= @booking.id %></td>
+            </tr>
+            <tr>
+              <td width="75%" align="left" style="line-height: 24px; padding: 15px 10px 5px 10px;"> <%= @dress.name %> (1)</td>
+              <td width="25%" align="left" style="line-height: 24px; padding: 15px 10px 5px 10px;"> GBP <%= @dress.price %></td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding-top: 20px;">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td width="75%" align="left" style="font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;"> TOTAL </td>
+            <td width="25%" align="left" style="font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;"> GBP <%= @dress.price %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" height="100%" valign="top" width="100%" style="padding: 0 35px 35px 35px;">
+          <tr>
+            <div class="booking-info">
+              <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+                <tr>
+                  <td align="left" valign="top" style="font-weight: 400; line-height: 24px;">
+                    <p>Booking Start Date</p>
+                    <p><%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+        <div class="booking-info">
+          <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;">
+          <tr>
+            <td align="left" valign="top" style="font-weight: 400; line-height: 24px;">
+              Booking End Date
+            </td>
+            <td>
+              <%= @booking.end_date.strftime("%A, %B %e, %Y") %>
+            </td>
+          </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+ -->
 <div class="container p-3">
-    <h2>Your booking has been confirmed!</h2>
-    <p>Please check if the information below is correct:</p>
+  <div class="d-flex justify-content-between">
+    <h2>Thank You For Your Order!</h2>
+    <%= link_to "Manage your bookings", user_path(@user), class: "button-primary" %>
+  </div>
+  <div class="booking-info">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Booking Confirmation #</td>
+          <td><%= @booking.id %></td>
+        </tr>
+        <tr>
+          <td>Dress Name</td>
+          <td><%= @dress.name %></td>
+        </tr>
+        <tr>
+          <td>Order Total</td>
+          <td><%= @dress.price %></td>
+        </tr>
+        <tr>
+          <td>Start Date</td>
+          <td><%= @booking.created_date.strftime("%A, %B %e, %Y") %></td>
+        </tr>
+        <tr>
+          <td>End Date</td>
+          <td><%= @booking.end_date.strftime("%A, %B %e, %Y") %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- <div class="container p-3">
+  <div class="row">
+    <div class="d-flex justify-content-between">
+
+    </div>
+  </div>
 </div>
 
   <div class="container p-3">
     <div class="row">
       <div class="d-flex justify-content-between">
-        <div class="col-4">
-          <%= cl_image_tag @dress.photos.first.key, height: 500, width: 400, crop: :fill, class: "show-photo" %>
-        </div>
-        <div class="col-4">
+        <div class="col-6">
           <div class="card booking-info p-3 m-3">
-            <p>PRICE:</p>
-            <p>GBP <%= @dress.price %></p>
-            <hr>
+            <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
             <p>Start Date:</p>
             <p><%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
             <hr>
@@ -22,7 +121,7 @@
             <%= link_to "Manage your bookings", user_path(@user), class: "btn btn-flat" %>
           </div>
       </div>
-      <div class="col-4">
+      <div class="col-6">
         <div class="card dress-info p-3 m-3">
           <p>Dress posted by:</p>
           <p><%= @dress.user.email %></p>
@@ -38,4 +137,4 @@
     </div>
   </div>
 </div>
-
+ -->
