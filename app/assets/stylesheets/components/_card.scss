@@ -25,24 +25,39 @@ h2 {
   }
 }
 
-.cards {
-  padding-left: 58px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+.card-title {
+  display: flex;
+  justify-content: space-between;
 }
 
+// .cards {
+//   padding-left: 58px;
+//   padding-bottom: 15px;
+//   margin-bottom: 15px;
+// }
+
+a {
+  text-decoration:none;
+  color:black;
+}
+
+a:hover {
+  text-decoration:none;
+  color:black;
+}
 .cards-grid {
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin:auto;
 }
 
 .dress-card {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 250px;
-  border-radius: 4px;
+  width: 300px;
+  border-radius: 8px;
 }
 
 .dress-card > img {
@@ -54,6 +69,7 @@ h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  opacity: 0.9;
 }
 
 .dress-card p {
@@ -75,48 +91,48 @@ h2 {
   justify-content: space-between;
 }
 
-// .card-infos .card-trip-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
+.card-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
 
-// .card-booking {
-//   overflow: hidden;
-//   height: 140px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   display: flex;
-//   align-items: center;
-//   margin: 16px;
-// }
+.card-booking {
+  overflow: hidden;
+  height: 140px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 16px;
+}
 
-// .card-booking img {
-//   height: 100%;
-//   width: 120px;
-//   object-fit: cover;
-// }
+.card-booking img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
 
-// .card-booking h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
+.card-booking h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
 
-// .card-booking p {
-//   font-size: 13px;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-// }
+.card-booking p {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
 
-// .card-booking .card-booking-infos {
-//   padding: 18px;
-// }
+.card-booking .card-booking-infos {
+  padding: 18px;
+}
 
-// .card-booking a {
-//   text-decoration: none;
-//   font-size: 12px;
-// }
+.card-booking a {
+  text-decoration: none;
+  font-size: 12px;
+}
