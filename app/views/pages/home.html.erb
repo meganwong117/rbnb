@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg); margin-top: -15px; margin-bottom: 50px;">
+<div id="home" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg); margin-top: -15px; margin-bottom: 50px;">
   <div class="banner-header">
     <h1>DressBnB</h1>
     <br>
@@ -14,44 +14,30 @@
 
 
 <div class= "category-cards d-flex justify-content-center mt-8 mb-8">
-  <div class= "home-cards">
-    <img src="https://travelbar.com/wp-content/uploads/2017/12/unsctw.jpg" alt="" class= "home-image" style="object-fit: cover;">
-    <h2>Bridal Celebration</h2>
-    <p>Express and define your special day.</p>
-  </div>
-   <div class= "home-cards">
-    <img src="https://cdn.designer-24.com/catalog/product/samr1589286197058_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
-    <h2>Wedding Celebration</h2>
-    <p>Unique looks, with a devine feeling.</p>
-  </div>
-     <div class= "home-cards">
+  <%= link_to dresses_path(event_type: 'Bridal') do %>
+    <div class= "home-cards">
+      <img src="https://travelbar.com/wp-content/uploads/2017/12/unsctw.jpg" alt="" class= "home-image" style="object-fit: cover;">
+      <h2>Bridal Celebration</h2>
+      <p>Express and define your special day.</p>
+    </div>
+  <% end %>
+
+  <%= link_to dresses_path(event_type: 'Wedding') do %>
+    <div class= "home-cards">
+      <img src="https://cdn.designer-24.com/catalog/product/samr1589286197058_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
+      <h2>Wedding Celebration</h2>
+      <p>Unique looks, with a devine feeling.</p>
+    </div>
+  <% end %>
+
+  <%= link_to dresses_path(event_type: 'Cocktail Party') do %>
+    <div class= "home-cards">
       <img src="https://cdn.designer-24.com/catalog/product/soab1589290517825_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
-    <h2>Cocktail Party</h2>
-    <p>A style for every story.</p>
-  </div>
+      <h2>Cocktail Party</h2>
+      <p>A style for every story.</p>
+    </div>
+  <% end %>
 </div>
 
 
 
-<!-- <div class= "cards">
-  <div class= "row m-0 align-items-center">
-    <% @dresses.each do |dress| %>
-      <div class="col-3">
-        <div class="dress-card">
-          <%if dress.photos.any? %>
-            <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-          <% end %>
-            <div class="dress-card-info">
-              <h3><%= dress.name %></h3>
-              <p><%= dress.description %></p>
-              <p><%= dress.price %></p>
-              <p><%= dress.currency %></p>
-              <p><%= dress.size %></p>
-              <p>RETAIL:<% dress.retail_price %></p>
-              <p><% dress.event_type %></p>
-            </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div> -->

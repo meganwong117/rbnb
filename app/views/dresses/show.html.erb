@@ -7,32 +7,40 @@
     <% end %>
     </div>
     <div class="col right text-center" >
-      <div class="titlesize">
-        <h1><%= @dress.name %></h1>
-        <p><%= @dress.size %></p>
-        <p><%= @dress.event_type %></p>
-      </div>
-      <div class="paragraph">
-        <p><%= @dress.description %></p>
-      </div>
-      <div class="dressprice">
-        <p><%= @dress.price%> <%= @dress.currency%></p>
-        <p>RETAIL:<% @dress.retail_price %></p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div id="dress-booking-form" class="col left text-center" >
-      <div class="form">
-        <%= simple_form_for([@dress, @booking]) do |f| %>
-          <%= f.input :created_date %>
-          <%= f.input :end_date %>
+      <div class ="dress-info">
+        <div class ="titlesize">
+          <h1><%= @dress.name %></h1>
+          <p>Size: <%= @dress.size %></p>
+          <p>Event: <%= @dress.event_type %></p>
+        </div>
+        <div class ="paragraph">
+          <p><%= @dress.description %></p>
+        </div>
+        <div class ="dressprice">
+          <p>Price: <%= @dress.price%> <%= @dress.currency%></p>
+          <p>Retail price: <% @dress.retail_price%> <%= @dress.currency%></p>
+        </div>
+        <div id= dress-booking-form class="col mt-5 right text-center" >
+          <% if @dress.user == current_user %>
+        <div class = "links">
+          <%= link_to "Remove Dress", dress_path(@dress), method: :delete, data: {confirm: "Are you sure you want to delete this dress?"}, class: "btn btn-flat" %>
+          <%= link_to "Edit Dress", edit_dress_path(@dress), class: "btn btn-flat" %>
+        </div>
+          <%else %>
+        <div class ="form">
+          <%= simple_form_for([@dress, @booking]) do |f| %>
+          <%= f.input :created_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
           <%= f.button :submit, class: "btn btn-primary" %>
         <% end %>
+      <% end %>
+        </div>
+          <%= link_to 'Back to dresses', dresses_path(@dress) %>
+        </div>
       </div>
-      <%= link_to 'Back to dresses', dresses_path(@dress) %>
     </div>
   </div>
+</div>
 </div>
 
 

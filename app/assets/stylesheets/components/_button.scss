@@ -2,7 +2,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #8575A9;
   transition: background 0.3s ease;
   a {
     text-decoration: none;
@@ -14,11 +14,23 @@
   }
 }
 .btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
-}
-
-.btn-primary {
   background: #8575A9;
   color: white;
 }
+
+.button-primary {
+  background: #A58BFE;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+}
+
+.button-primary:hover{
+  background: #693DFB;
+  color: white;
+}
+
+
+
+

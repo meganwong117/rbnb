@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @dresses = @user.dresses
-    @borrowed_dresses = @user.borrowed_dresses
+    @borrowed_dresses = @user.bookings
     @my_bookings = Booking.where(dress: @user.dresses)
   end
 end

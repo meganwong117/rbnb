@@ -5,6 +5,7 @@
   <%= f.input :currency, collection: Dress::CURRENCIES %>
   <%= f.input :size %>
   <%= f.input :retail_price %>
+  <%= f.input :currency, collection: Dress::CURRENCIES %>
   <%= f.input :event_type %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit class: "btn btn-flat" %>
