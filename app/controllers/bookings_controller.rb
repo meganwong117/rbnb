@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.dress = @dress
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render "dresses/show"
     end
