@@ -1,4 +1,4 @@
-<div id="profile">
+<div class="profile">
   <h1>My dresses</h1>
     <div class= "cards">
       <div class="cards cards-grid">
@@ -22,8 +22,18 @@
                 <p><%= dress.size %></p>
                 <div class="card-bottom">
                 <p><% dress.event_type %></p>
-                  <% if @my_bookings.where('dress_id = ?', dress.id).present? %>
+       <!--            <%# if @my_bookings.where('dress_id = ?', dress.id).present? %>
                     <p>Rented</p>
+                  <%# end %> -->
+                  <% dress.bookings.each do |booking| %>
+                    <% if booking.status == "pending"%>
+                      <%= link_to 'Approve', approve_booking_path(booking), class: "button-xs success", method: :post %>
+                      <%= link_to 'Decline', decline_booking_path(booking), class: "button-xs success", method: :post %>
+                      <% elsif booking.status == "approved"%>
+                        <p>V</p>
+                      <% else %>
+                        <p>declined</p>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
@@ -31,7 +41,6 @@
         <% end %>
       </div>
     </div>
-  </div>
 
    <h1>My Bookings</h1>
   <div class="cards cards-grid">
@@ -53,3 +62,4 @@
       <% end %>
   </div>
 </div>
+
