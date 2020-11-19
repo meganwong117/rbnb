@@ -19,17 +19,18 @@
 }
 
 .button-primary {
-  background: #693DFB;
+  background: #A58BFE;
   color: white;
   padding: 8px 24px;
   border-radius: 50px;
   transition: opacity 0.3s ease;
-  opacity: 0.6;
 }
 
-.button-primary{
-  opacity: 1;
+.button-primary:hover{
+  background: #693DFB;
+  color: white;
 }
+
 
 
 
