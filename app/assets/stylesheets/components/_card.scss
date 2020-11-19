@@ -28,13 +28,9 @@ h2 {
 .card-title {
   display: flex;
   justify-content: space-between;
+  font-weight:bold;
+  color:black;
 }
-
-// .cards {
-//   padding-left: 58px;
-//   padding-bottom: 15px;
-//   margin-bottom: 15px;
-// }
 
 a {
   text-decoration:none;
@@ -49,7 +45,6 @@ a:hover {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin:8px 24px;
 }
 
 .dress-card {
