@@ -10,5 +10,10 @@ Rails.application.routes.draw do
   resources :dresses do
     resources :bookings, only: [ :new, :create ]
   end
-  resources :bookings, only: [ :index, :edit, :update, :show, :destroy ]
+  resources :bookings, only: [ :index, :edit, :update, :show, :destroy ] do
+      member do
+        post :approve
+        post :decline
+      end
+  end
 end
