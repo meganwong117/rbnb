@@ -1,0 +1,33 @@
+<div class="booking-container">
+  <div class="d-flex justify-content-between align-items-end">
+    <h2>Thank You For Your Order!</h2>
+    <%= link_to "Manage your bookings", user_path(current_user), class: "btn btn-primary" %>
+  </div>
+  <div class="booking-info">
+    <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="font-weight: bold;">Booking Confirmation #</td>
+          <td><%= @booking.id %></td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">Dress Name</td>
+          <td><%= @dress.name %></td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">Order Total</td>
+          <td><%= @dress.price %></td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">Start Date</td>
+          <td><%= @booking.created_date.strftime("%A, %B %e, %Y") %></td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">End Date</td>
+          <td><%= @booking.end_date.strftime("%A, %B %e, %Y") %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
