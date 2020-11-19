@@ -6,15 +6,24 @@
       <p>Dress to Impress</p>
     </div>
     <br>
+
     <div class="btn btn-flat mr-3">
       <%= link_to 'Rent a Dress', dresses_path%>
     </div>
     <div class="btn btn-flat">
       <%= link_to 'Become a Lender', new_dress_path %>
+      
     </div>
+      <%= form_tag dresses_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "search-form",
+          placeholder: "Find a dress..."
+      %>
+      <%= submit_tag "Search", class: "button-primary" %>
+    <% end %>
   </div>
 </div>
-
 
 <div class= "category-cards d-flex justify-content-center mt-8 mb-8">
   <%= link_to dresses_path(event_type: 'Bridal') do %>
@@ -41,6 +50,12 @@
     </div>
   <% end %>
 </div>
+
+  <%= link_to dresses_path do %>
+    <div class= "button-primary-homepage">
+      <h4 class= "d-flex justify-content-center">All Dresses</h4>
+    </div>
+  <% end %>
 
 
 

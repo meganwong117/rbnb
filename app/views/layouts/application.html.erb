@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rbnb</title>
+    <title>Dressbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,13 +12,17 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <% unless action_name == 'home' %>
-      <div style="height: 80px;"></div>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class="page-container">
+      <%= render "shared/navbar" %>
+      <% unless action_name == 'home' %>
+        <div style="height: 80px;"></div>
+      <% end %>
+    <!-- <p class="notice"> <#%= notice %></p>
+    <p class="alert"><#%= alert %></p> -->
+    <div class="content-container">
+      <%= yield %>
+    </div>
+     <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

@@ -21,6 +21,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @dress = @booking.dress
+    @user = @booking.user
   end
 
   def edit
@@ -41,6 +43,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit( :created_date, :end_date)
+    params.require(:booking).permit(:created_date, :end_date)
   end
 end
