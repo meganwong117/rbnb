@@ -25,37 +25,35 @@
   </div>
 </div>
 
-<div class= "category-cards d-flex justify-content-center mt-8 mb-8">
-  <%= link_to dresses_path(event_type: 'Bridal') do %>
-    <div class= "home-cards">
-      <img src="https://travelbar.com/wp-content/uploads/2017/12/unsctw.jpg" alt="" class= "home-image" style="object-fit: cover;">
-      <h2>Bridal Celebration</h2>
-      <p>Express and define your special day.</p>
-    </div>
-  <% end %>
+<div class= "container-fluid">
+  <div class= "category-cards d-flex justify-content-center mt-8 mb-8">
+    <%= link_to dresses_path(event_type: 'Bridal') do %>
+      <div class= "home-cards">
+        <img src="https://travelbar.com/wp-content/uploads/2017/12/unsctw.jpg" alt="" class= "home-image" style="object-fit: cover;">
+        <h2>Bridal Celebration</h2>
+        <p>Express and define your special day.</p>
+      </div>
+    <% end %>
 
-  <%= link_to dresses_path(event_type: 'Wedding') do %>
-    <div class= "home-cards">
-      <img src="https://cdn.designer-24.com/catalog/product/samr1589286197058_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
-      <h2>Wedding Celebration</h2>
-      <p>Unique looks, with a devine feeling.</p>
-    </div>
-  <% end %>
+    <%= link_to dresses_path(event_type: 'Wedding') do %>
+      <div class= "home-cards">
+        <img src="https://cdn.designer-24.com/catalog/product/samr1589286197058_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
+        <h2>Wedding Celebration</h2>
+        <p>Unique looks, with a devine feeling.</p>
+      </div>
+    <% end %>
 
-  <%= link_to dresses_path(event_type: 'Cocktail Party') do %>
-    <div class= "home-cards">
-      <img src="https://cdn.designer-24.com/catalog/product/soab1589290517825_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
-      <h2>Cocktail Party</h2>
-      <p>A style for every story.</p>
-    </div>
-  <% end %>
-</div>
-
+    <%= link_to dresses_path(event_type: 'Cocktail Party') do %>
+      <div class= "home-cards">
+        <img src="https://cdn.designer-24.com/catalog/product/soab1589290517825_resized_480x.jpg" alt="" class= "home-image" style="object-fit: cover;">
+        <h2>Cocktail Party</h2>
+        <p>A style for every story.</p>
+      </div>
+    <% end %>
+  </div>
   <%= link_to dresses_path do %>
     <div class= "button-primary-homepage">
       <h4 class= "d-flex justify-content-center">All Dresses</h4>
     </div>
   <% end %>
-
-
-
+</div>
