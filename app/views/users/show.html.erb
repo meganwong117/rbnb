@@ -1,9 +1,8 @@
 <div id="profile">
   <h1>My dresses</h1>
     <div class= "cards">
-      <div class= "row align-items-center">
+      <div class="cards cards-grid">
         <% @dresses.each do |dress| %>
-          <div class="col-3">
             <div class="dress-card">
               <%if dress.photos.any? %>
                 <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
@@ -29,27 +28,28 @@
                 </div>
               </div>
             </div>
-          </div>
         <% end %>
+          </div>
       </div>
     </div>
 
- <h1>My Bookings</h1>
-<div class="cards cards-grid">
-    <% @borrowed_dresses.each do |booking| %>
-        <div class="dress-card">
-          <% if booking.dress.photos.any? %>
-            <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-          <% end %>
-        <div class="dress-card-info">
-          <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
-          <p><%= booking.dress.description %></p>
-          <p><%= booking.dress.price %><%= booking.dress.currency %></p>
-          <p><%= booking.dress.currency %></p>
-          <p><%= booking.dress.size %></p>
-          <p>RETAIL: <%= booking.dress.retail_price %></p>
-          <p><% booking.dress.event_type %></p>
+   <h1>My Bookings</h1>
+  <div class="cards cards-grid">
+      <% @borrowed_dresses.each do |booking| %>
+          <div class="dress-card">
+            <% if booking.dress.photos.any? %>
+              <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+            <% end %>
+          <div class="dress-card-info">
+            <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
+            <p><%= booking.dress.description %></p>
+            <p><%= booking.dress.price %><%= booking.dress.currency %></p>
+            <p><%= booking.dress.currency %></p>
+            <p><%= booking.dress.size %></p>
+            <p>RETAIL: <%= booking.dress.retail_price %></p>
+            <p><% booking.dress.event_type %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
 </div>
