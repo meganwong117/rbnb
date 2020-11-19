@@ -4,37 +4,33 @@
   height: 100% !important;
   border-radius: 16px !important;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px !important;
-h2 {
-  font-size: 18px;
-  color: black !important;
-  padding-top: 18px;
-  padding-left: 18px;
-  }
+  h2 {
+    font-size: 18px;
+    color: black !important;
+    padding-top: 18px;
+    padding-left: 18px;
+    }
 
-p {
-  color: #717171 !important;
-  padding-left: 18px !important;
+  p {
+    color: #717171 !important;
+    padding-left: 18px !important;
+    }
   }
-}
 
 .cocktail-card {
   margin-left: 30px;
   margin-right: 30px;
-h2 {
-  font-size: 18px;
+  h2 {
+    font-size: 18px;
+    }
   }
-}
 
 .card-title {
   display: flex;
   justify-content: space-between;
+  font-weight:bold;
+  color:black;
 }
-
-// .cards {
-//   padding-left: 58px;
-//   padding-bottom: 15px;
-//   margin-bottom: 15px;
-// }
 
 a {
   text-decoration:none;
@@ -49,7 +45,7 @@ a:hover {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin:8px 24px;
+  padding-bottom:16px;
 }
 
 .dress-card {

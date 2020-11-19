@@ -29,5 +29,10 @@
   background-color: white !important;
   .nav-link {
     color: black !important;
+    opacity: 0.8;
+    font-weight:200;
+  }
+  .nav-link:hover{
+    opacity:1;
   }
 }
