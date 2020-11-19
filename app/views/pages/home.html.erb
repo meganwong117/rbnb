@@ -12,19 +12,20 @@
     </div>
     <div class="btn btn-flat">
       <%= link_to 'Become a Lender', new_dress_path %>
-      
     </div>
-      <%= form_tag dresses_path, method: :get do %>
-        <div class="search">
+
+    <%= form_tag dresses_path, method: :get do %>
+      <div class="search">
         <%= text_field_tag :query,
         params[:query],
         class: "search-form-control",
         placeholder: "Find a dress..."
         %>
-        <button name="button" type="submit" class="button-primary">
-          <i class="fas fa-search"></i> Search
-        </button>
+      <button name="button" type="submit" class="button-primary">
+        <i class="fas fa-search"></i> Search
+      </button>
       </div>
+    <% end %>
   </div>
 </div>
 
