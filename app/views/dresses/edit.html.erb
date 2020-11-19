@@ -1,14 +1,15 @@
 <%= simple_form_for(@dress) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :currency, collection: Dress::CURRENCIES %>
-  <%= f.input :size %>
+  <%= f.input :name, class: "form-control" %>
+  <%= f.input :description, class: "form-control" %>
+  <%= f.input :price, class: "form-control" %>
+  <%= f.input :currency, collection: Dress::CURRENCIES, class: "form-control" %>
+  <%= f.input :size, class: "form-control" %>
   <%= f.input :retail_price %>
-  <%= f.input :currency, collection: Dress::CURRENCIES %>
-  <%= f.input :event_type %>
+  <%= f.input :currency, collection: Dress::CURRENCIES, class: "form-control" %>
+  <%= f.input :event_type, collection: Dress::EVENT_TYPES, class: "form-control" %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "btn btn-flat" %>
+  <%= f.button :submit, class:"button-primary" %>
 <% end %>
+
 
 
