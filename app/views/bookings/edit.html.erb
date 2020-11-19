@@ -1,5 +1,5 @@
 <%= simple_form_for(@booking) do |f| %>
-  <%= f.input :created_date %>
-  <%= f.input :end_date %>
+  <%= f.input :created_date,  as: :date, html5: true  %>
+  <%= f.input :end_date, as: :date, html5: true  %>
   <%= f.submit class: "btn btn-sm btn-outline-secondary" %>
 <% end %>
