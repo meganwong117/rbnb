@@ -8,20 +8,22 @@
 
 <div class="cards cards-grid">
     <% @dresses.each do |dress| %>
+      <%= link_to dress_path(dress) do  %>
         <div class="dress-card">
           <% if dress.photos.any? %>
             <%= cl_image_tag dress.photos.first.key, height: 280, width: 280, crop: :fill %>
-        <% end %>
-        <div class="dress-card-info">
-          <h3><%= link_to dress.name.upcase, dress_path(dress) %></h3>
-          <p><%= dress.description %></p>
-          <p><%= dress.price %><%= dress.currency %></p>
-    <!--       <p><%= dress.currency %></p> -->
-          <p><%= dress.size %></p>
-          <p>RETAIL: <%= dress.retail_price %></p>
-          <p><% dress.event_type %></p>
+          <% end %>
+          <div class="dress-card-info">
+            <h3><%= link_to dress.name.upcase, dress_path(dress) %></h3>
+            <p><%= dress.description %></p>
+            <p><%= dress.price %><%= dress.currency %></p>
+      <!--       <p><%= dress.currency %></p> -->
+            <p><%= dress.size %></p>
+            <p>RETAIL: <%= dress.retail_price %></p>
+            <p><% dress.event_type %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 </div>
 

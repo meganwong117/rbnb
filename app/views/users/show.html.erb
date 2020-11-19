@@ -9,7 +9,15 @@
                 <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
               <% end %>
               <div class="dress-card-info">
+                <div class ="card-title">
                 <h3><%= dress.name %></h3>
+                <div>
+                <%= link_to edit_dress_path(dress) do %>
+                <i class="fas fa-edit"></i>
+                <% end %>
+                  <%= link_to "X", dress_path(dress), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                </div>
                 <p><%= dress.description %></p>
                 <p><%= dress.price %></p>
                 <p><%= dress.size %></p>
@@ -28,58 +36,20 @@
 
  <h1>My Bookings</h1>
 <div class="cards cards-grid">
-    <% @borrowed_dresses.each do |dress| %>
+    <% @borrowed_dresses.each do |booking| %>
         <div class="dress-card">
-          <% if dress.photos.any? %>
-            <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+          <% if booking.dress.photos.any? %>
+            <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
           <% end %>
         <div class="dress-card-info">
-          <h3><%= link_to dress.name.upcase, dress_path(dress) %></h3>
-          <p><%= dress.description %></p>
-          <p><%= dress.price %><%= dress.currency %></p>
-          <p><%= dress.currency %></p>
-          <p><%= dress.size %></p>
-          <p>RETAIL: <%= dress.retail_price %></p>
-          <p><% dress.event_type %></p>
+          <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
+          <p><%= booking.dress.description %></p>
+          <p><%= booking.dress.price %><%= booking.dress.currency %></p>
+          <p><%= booking.dress.currency %></p>
+          <p><%= booking.dress.size %></p>
+          <p>RETAIL: <%= booking.dress.retail_price %></p>
+          <p><% booking.dress.event_type %></p>
         </div>
       </div>
     <% end %>
 </div>
-<!--
-  <h1>My Bookings</h1>
-  <div class= "cards">
-    <div class= "row align-items-center">
-      <% @borrowed_dresses.each do |dress| %>
-       <div class="col-3">
-         <div>
-            <%if dress.photos.any? %>
-              <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-            <% end %>
-            <h3><%= dress.name %></h3>
-            <p><%= dress.description %></p>
-            <p><%= dress.price %></p>
-            <p><%= dress.size %></p>
-            <p><% dress.event_type %></p>
-          </div>
-          </div>
-      <% end %>
-    </div>
-  </div>
-</div> -->
-<!-- <h1>My Rented dresses</h1>
-<div class= "cards">
-  <div class= "row align-items-center">
-    <%  @my_bookings.each do |booking|%>
-    <div class="col-3">
-       <div>
-          <%if booking.dress.photos.any? %>
-            <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-          <% end %>
-          <h3><%= booking.dress.name %></h3>
-          <p><%= booking.dress.description %></p>
-          <p><%= booking.dress.price %></p>
-          <p><%= booking.dress.size %></p>
-          <p><% booking.dress.event_type %></p>
-        </div>
-        </div>
-<% end  %> -->
