@@ -18,7 +18,18 @@
   color: white;
 }
 
-.btn-primary {
-  background: #8575A9;
+.button-primary {
+  background: #693DFB;
   color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
 }
+
+.button-primary{
+  opacity: 1;
+}
+
+
+
