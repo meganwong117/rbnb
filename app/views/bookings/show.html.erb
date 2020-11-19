@@ -1,0 +1,41 @@
+<div class="container p-3">
+    <h2>Your booking has been confirmed!</h2>
+    <p>Please check if the information below is correct:</p>
+</div>
+
+  <div class="container p-3">
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <div class="col-4">
+          <%= cl_image_tag @dress.photos.first.key, height: 500, width: 400, crop: :fill, class: "show-photo" %>
+        </div>
+        <div class="col-4">
+          <div class="card booking-info p-3 m-3">
+            <p>PRICE:</p>
+            <p>GBP <%= @dress.price %></p>
+            <hr>
+            <p>Start Date:</p>
+            <p><%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+            <hr>
+            <p>End Date:</p>
+            <p><%= @booking.end_date.strftime("%A, %B %e, %Y") %></p>
+            <%= link_to "Manage your bookings", user_path(@user), class: "btn btn-flat" %>
+          </div>
+      </div>
+      <div class="col-4">
+        <div class="card dress-info p-3 m-3">
+          <p>Dress posted by:</p>
+          <p><%= @dress.user.email %></p>
+          <hr>
+          <p><%= @dress.name %></p>
+          <p><%= @dress.description %></p>
+          <hr>
+          <p>GBP <%= @dress.price %></p>
+          <hr>
+          <p><%= @dress.size %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
