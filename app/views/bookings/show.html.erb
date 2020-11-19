@@ -1,7 +1,7 @@
 <div class="booking-container">
   <div class="d-flex justify-content-between align-items-end">
     <h2>Thank You For Your Order!</h2>
-    <%= link_to "Manage your bookings", user_path(@user), class: "btn btn-primary" %>
+    <%= link_to "Manage your bookings", user_path(@user), class: "button-primary" %>
   </div>
   <div class="booking-info">
     <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
