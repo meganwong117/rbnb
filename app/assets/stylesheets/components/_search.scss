@@ -7,7 +7,20 @@
   border: 1px solid #E7E7E7;
   // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border-radius: 8px;
-} .submit-button {
+}
+.search-form-control {
+  height: 3.5rem;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+}
+.search-form-control:focus {
+  border: 1px solid #A58BFE;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.submit-button {
   position: absolute;
   padding: 8px 24px;
   border-radius: 8px;
@@ -16,22 +29,38 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
-  background: #8575A9;
-  color: white;
-}
-  .submit-button:hover {
   background: #A58BFE;
   color: white;
 }
-
-
-.search-form-control {
-  height: 3.5rem;
-  border: none;
-  width: 100%;
+  .submit-button:hover {
+  background: #9678FE;
+  color: white;
+  transition: opacity 0.3s ease;
 }
 
-.search-form-control:focus {
+.home-search {
+  align-items: center;
+  position: relative;
+  margin: 20px;
+  background-color: transparent;
+  border: 1px solid #E7E7E7;
+  margin-bottom: 35px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  width: 420px;
+  left: 750px;
+  bottom: 132px;
+}
+.home-search-form-control {
+  height: 4.5rem;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 8px;
+} .home-search-form-control body {
+  color: white;
+}
+.home-search-form-control:focus {
   border: 1px solid #A58BFE;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
