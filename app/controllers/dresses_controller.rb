@@ -1,8 +1,12 @@
 class DressesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_dress, only: [:show, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index, :show]
+  before_action :set_dress, only: [ :show, :edit, :destroy ]
   def index
-    @dresses = Dress.all
+    if params[:query]
+      @dresses = Dress.search(params[:query])
+    else
+      @dresses = Dress.all
+    end
     return unless params[:event_type]
 
     @dresses = Dress.where(event_type: params[:event_type])
