@@ -1,13 +1,18 @@
 <div id="home" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg); margin-top: -15px; margin-bottom: 50px;">
   <div class="banner-header">
     <h1>DressBnB</h1>
+    <div class ="description">
+      <p>You've got plans?</p>
+      <p>Dress to Impress</p>
+    </div>
     <br>
-    <div class="button-primary">
-      <% if user_signed_in? %>
-        <%= link_to 'Dress to impress', dresses_path %>
-      <% else %>
-        <%= link_to 'Dress to impress', new_user_registration_path %>
-      <% end %>
+
+    <div class="btn btn-flat mr-3">
+      <%= link_to 'Rent a Dress', dresses_path%>
+    </div>
+    <div class="btn btn-flat">
+      <%= link_to 'Become a Lender', new_dress_path %>
+      
     </div>
       <%= form_tag dresses_path, method: :get do %>
       <%= text_field_tag :query,
