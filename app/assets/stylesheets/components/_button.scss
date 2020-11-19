@@ -14,12 +14,12 @@
   }
 }
 .btn-flat:hover {
-  background: #8575A9;
+  background: #A58BFE;
   color: white;
 }
 
 .button-primary {
-  background: #A58BFE;
+  background: #8575A9;
   color: white;
   padding: 8px 24px;
   border-radius: 50px;
@@ -27,7 +27,21 @@
 }
 
 .button-primary:hover{
-  background: #693DFB;
+  background: #A58BFE;
+  color: white;
+}
+
+.button-primary-homepage {
+  background: #8575A9;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+  margin: 30px;
+}
+
+.button-primary-homepage:hover {
+  background: #A58BFE;
   color: white;
 }
 
