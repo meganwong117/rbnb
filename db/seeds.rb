@@ -6,5 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: "tamara@gmail.com", password: "asgdsad")
-Dress.create!(name: "Elisabetta Franchi", event_type: "wedding", size: "XS", price: 135, description: "blablablablablabblablabalblablab", user: User.last )
+EVENT_TYPES = ["Bridal", "Wedding", "Cocktail Party"]
+
+user = User.new(
+  email: "test@test.com",
+  password: "ajkg;asdjg;"
+  )
+
+20.times do
+  dress = Dress.create!(
+    user: user,
+    name: Faker::Name.first_name,
+    price: Faker::Number.number(digits: 3),
+    description: Faker::Quote.yoda,
+    # photos: Faker::LoremFlickr.colorized_image(size: "50x60", search_terms: ["dress"]),
+    currency: "GBP",
+    event_type: EVENT_TYPES.sample
+  )
+end
