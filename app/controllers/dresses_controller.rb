@@ -3,6 +3,9 @@ class DressesController < ApplicationController
   before_action :set_dress, only: [:show, :edit, :destroy]
   def index
     @dresses = Dress.all
+    return unless params[:event_type]
+
+    @dresses = Dress.where(event_type: params[:event_type])
   end
 
   def new
