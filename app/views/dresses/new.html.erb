@@ -8,9 +8,12 @@
       <%= f.input :currency, collection: Dress::CURRENCIES, class: "form-control" %>
       <%= f.input :size, class: "form-control" %>
       <%= f.input :retail_price, class: "form-control" %>
+      <%= f.input :retail_price, collection: Dress::CURRENCIES,  class: "form-control" %>
       <%= f.input :event_type, class: "form-control" %>
+      <%= f.input :event_type, collection: Dress::EVENT_TYPES, class: "form-control" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.button :submit, class:"button-primary" %>
     <% end %>
   </div>
 </div>
+
