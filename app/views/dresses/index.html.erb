@@ -6,6 +6,15 @@
   </div>
 </div> -->
 
+<%= form_tag dresses_path, method: :get do %>
+  <%= text_field_tag :query,
+      params[:query],
+      class: "search-form",
+      placeholder: "Find a dress..."
+      %>
+  <%= submit_tag "Search", class: "button-primary" %>
+<% end %>
+
 <div class="cards cards-grid">
     <% @dresses.each do |dress| %>
       <%= link_to dress_path(dress) do  %>

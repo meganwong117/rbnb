@@ -9,9 +9,16 @@
         <%= link_to 'Dress to impress', new_user_registration_path %>
       <% end %>
     </div>
+      <%= form_tag dresses_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "search-form",
+          placeholder: "Find a dress..."
+      %>
+      <%= submit_tag "Search", class: "button-primary" %>
+    <% end %>
   </div>
 </div>
-
 
 <div class= "category-cards d-flex justify-content-center mt-8 mb-8">
   <%= link_to dresses_path(event_type: 'Bridal') do %>
