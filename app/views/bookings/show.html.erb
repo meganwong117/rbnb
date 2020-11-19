@@ -4,30 +4,15 @@
     <%= link_to "Manage your bookings", user_path(@user), class: "button-primary" %>
   </div>
   <div class="booking-info">
+    <div class="d-flex justify-content-around">
     <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
-    <table class="table">
-      <tbody>
-        <tr>
-          <td style="font-weight: bold;">Booking Confirmation #</td>
-          <td><%= @booking.id %></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold;">Dress Name</td>
-          <td><%= @dress.name %></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold;">Order Total</td>
-          <td><%= @dress.price %></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold;">Start Date</td>
-          <td><%= @booking.created_date.strftime("%A, %B %e, %Y") %></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold;">End Date</td>
-          <td><%= @booking.end_date.strftime("%A, %B %e, %Y") %></td>
-        </tr>
-      </tbody>
-    </table>
+    </div>
+    <div class="booking">
+      <p>Booking Confirmation #: <%= @booking.id %></p>
+      <p>Dress Name: <%= @dress.name %></p>
+      <p>Order Total: <%= @dress.price %></p>
+      <p>Start Date: <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+      <p>End Date: <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+    </div>
   </div>
 </div>
