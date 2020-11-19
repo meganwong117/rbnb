@@ -1,21 +1,19 @@
-<!-- <p id="notice"><%= notice %></p> -->
-
 <div class="cards cards-grid">
     <% @dresses.each do |dress| %>
       <%= link_to dress_path(dress) do  %>
         <div class="dress-card">
           <% if dress.photos.any? %>
             <%= cl_image_tag dress.photos.first.key, height: 280, width: 280, crop: :fill %>
-        <% end %>
-        <div class="dress-card-info">
-          <h3><%= dress.name.upcase %></h3>
-          <p><%= dress.description %></p>
-          <p><%= dress.price %></p>
-          <p><%= dress.currency %></p>
-          <p><%= dress.size %></p>
-          <p><%= dress.retail_price %></p>
-          <p><% dress.event_type %></p>
-        </div>
+          <% end %>
+          <div class="dress-card-info">
+            <h3><%= dress.name.upcase %></h3>
+            <p><%= dress.description %></p>
+            <p><%= dress.price %></p>
+            <p><%= dress.currency %></p>
+            <p><%= dress.size %></p>
+            <p><%= dress.retail_price %></p>
+            <p><% dress.event_type %></p>
+          </div>
         </div>
       <% end %>
     <% end %>
