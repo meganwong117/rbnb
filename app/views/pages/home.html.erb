@@ -15,13 +15,16 @@
       
     </div>
       <%= form_tag dresses_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "search-form",
-          placeholder: "Find a dress..."
-      %>
-      <%= submit_tag "Search", class: "button-primary" %>
-    <% end %>
+        <div class="search">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "search-form-control",
+        placeholder: "Find a dress..."
+        %>
+        <button name="button" type="submit" class="button-primary">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
   </div>
 </div>
 
