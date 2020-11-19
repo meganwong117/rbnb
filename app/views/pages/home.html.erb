@@ -2,7 +2,7 @@
   <div class="banner-header">
     <h1>DressBnB</h1>
     <br>
-    <div class="btn btn-flat">
+    <div class="button-primary">
       <% if user_signed_in? %>
         <%= link_to 'Dress to impress', dresses_path %>
       <% else %>
@@ -45,6 +45,12 @@
     </div>
   <% end %>
 </div>
+
+  <%= link_to dresses_path do %>
+    <div class= "button-primary-homepage">
+      <h4 class= "d-flex justify-content-center">All Dresses</h4>
+    </div>
+  <% end %>
 
 
 
