@@ -1,15 +1,35 @@
 .booking-info {
-  max-width: 50;
-  min-width: 240px;
   vertical-align: top;
   width: 100%;
   background-color: #eeeeee;
-}
-
-a {
-  padding-bottom: -15px;
+  margin: 15px auto;
+  width: 800px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  & tr {
+    border-style: hidden;
+  }
 }
 
 body {
   font-size: 16px;
+}
+
+h2 {
+  color: gray !important;
+}
+
+.show-photo {
+  align: center;
+}
+
+.booking-container {
+  margin-top: 80px;
+  padding: 0px 80px;
 }
