@@ -14,100 +14,93 @@
   </ul>
 
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="dresses" area-labelledby="dresses-tab" role="tabpanel">
-      <div class="cards cards-grid">
-        <% @dresses.each do |dress| %>
-          <div class="dress-card">
-            <%if dress.photos.any? %>
-              <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-            <% end %>
-            <div class="dress-card-info">
-              <div class ="card-title">
-                <h3><%= dress.name %></h3>
-                <div>
-                  <%= link_to edit_dress_path(dress) do %>
-                    <i class="fas fa-edit"></i>
-                  <% end %>
-                  <%= link_to "X", dress_path(dress), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="pt-3">
+      <div class="tab-pane fade show active" id="dresses" area-labelledby="dresses-tab" role="tabpanel">
+        <div class="cards cards-grid">
+          <% @dresses.each do |dress| %>
+            <div class="dress-card">
+              <%if dress.photos.any? %>
+                <%= cl_image_tag dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+              <% end %>
+              <div class="dress-card-info">
+                <div class ="card-title">
+                  <h3><%= dress.name %></h3>
+                  <div>
+                    <%= link_to edit_dress_path(dress) do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= link_to "X", dress_path(dress), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                </div>
+                <p><%= dress.description %></p>
+                <p><%= dress.price %></p>
+                <p><%= dress.size %></p>
+                <div class="card-bottom">
+                  <p><% dress.event_type %></p>
                 </div>
               </div>
-              <p><%= dress.description %></p>
-              <p><%= dress.price %></p>
-              <p><%= dress.size %></p>
-              <div class="card-bottom">
-                <p><% dress.event_type %></p>
-                <% dress.bookings.each do |booking| %>
-                  <% if booking.status == "pending"%>
-                    <%= link_to 'Approve', approve_booking_path(booking), class: "button-xs success", method: :post %>
-                    <%= link_to 'Decline', decline_booking_path(booking), class: "button-xs success", method: :post %>
-                  <% elsif booking.status == "approved"%>
-                    <em><p>rented</p></em>
-                  <% else %>
-                    <em><p>available</p></em>
-                  <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="bookings" area-labelledby="bookings-tab" role="tabpanel">
+        <div class="cards cards-grid" >
+          <% @borrowed_dresses.each do |booking| %>
+            <div class="dress-card">
+              <% if booking.dress.photos.any? %>
+                <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
+              <% end %>
+              <div class="dress-card-info">
+                <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
+                <p><%= booking.dress.description %></p>
+                <p><%= booking.dress.price %><%= booking.dress.currency %></p>
+                <p><%= booking.dress.currency %></p>
+                <p><%= booking.dress.size %></p>
+                <p>RETAIL: <%= booking.dress.retail_price %></p>
+                <p><% booking.dress.event_type %></p>
+                <% if booking.status == "pending"%>
+                  <p>pending</p>
+                <% elsif booking.status == "approved"%>
+                  <p id="approved">approved</p>
+                <% else %>
+                  <p id="declined">declined</p>
                 <% end %>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <div class="tab-pane fade" id="bookings" area-labelledby="bookings-tab" role="tabpanel">
-      <div class="cards cards-grid" >
-        <% @borrowed_dresses.each do |booking| %>
-          <div class="dress-card">
-            <% if booking.dress.photos.any? %>
-              <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-            <% end %>
-            <div class="dress-card-info">
-              <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
-              <p><%= booking.dress.description %></p>
-              <p><%= booking.dress.price %><%= booking.dress.currency %></p>
-              <p><%= booking.dress.currency %></p>
-              <p><%= booking.dress.size %></p>
-              <p>RETAIL: <%= booking.dress.retail_price %></p>
-              <p><% booking.dress.event_type %></p>
-              <% if booking.status == "pending"%>
-                <%= link_to 'Approve', approve_booking_path(booking), class: "button-xs success", method: :post %>
-                <%= link_to 'Decline', decline_booking_path(booking), class: "button-xs success", method: :post %>
-              <% elsif booking.status == "approved"%>
-                <p id="approved">approved</p>
-              <% else %>
-                <p id="declined">declined</p>
+      <div class="tab-pane fade" id="requests" area-labelledby="request-tab" role="tabpanel">
+        <div class="cards cards-grid" >
+          <% @pending_bookings.each do |booking| %>
+            <div class="dress-card">
+              <% if booking.dress.photos.any? %>
+                <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
               <% end %>
+              <div class="dress-card-info">
+                <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
+                <p><%= booking.dress.description %></p>
+                <p><%= booking.dress.price %><%= booking.dress.currency %></p>
+                <p><%= booking.dress.currency %></p>
+                <p><%= booking.dress.size %></p>
+                <p>RETAIL: <%= booking.dress.retail_price %></p>
+                <p><% booking.dress.event_type %></p>
+                <% if booking.status == "pending"%>
+                  <div class="d-flex justify-content-between pt-2">
+                    <%= link_to 'Approve', approve_booking_path(booking), class: "button-xs success", method: :post %>
+                    <%= link_to 'Decline', decline_booking_path(booking), class: "button-xs success", method: :post %>
+                  </div>
+                <% elsif booking.status == "approved"%>
+                  <p id="approved">approved</p>
+                <% else %>
+                  <p id="declined">declined</p>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="tab-pane fade" id="requests" area-labelledby="request-tab" role="tabpanel">
-      <div class="cards cards-grid" >
-        <% @pending_bookings.each do |booking| %>
-          <div class="dress-card">
-            <% if booking.dress.photos.any? %>
-              <%= cl_image_tag booking.dress.photos.first.key, height: 280, width: 250, crop: :fill %>
-            <% end %>
-            <div class="dress-card-info">
-              <h3><%= link_to booking.dress.name.upcase, dress_path(booking.dress) %></h3>
-              <p><%= booking.dress.description %></p>
-              <p><%= booking.dress.price %><%= booking.dress.currency %></p>
-              <p><%= booking.dress.currency %></p>
-              <p><%= booking.dress.size %></p>
-              <p>RETAIL: <%= booking.dress.retail_price %></p>
-              <p><% booking.dress.event_type %></p>
-              <% if booking.status == "pending"%>
-              <%= link_to 'Approve', approve_booking_path(booking), class: "button-xs success", method: :post %>
-                <%= link_to 'Decline', decline_booking_path(booking), class: "button-xs success", method: :post %>
-              <% elsif booking.status == "approved"%>
-                <p id="approved">approved</p>
-              <% else %>
-                <p id="declined">declined</p>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
