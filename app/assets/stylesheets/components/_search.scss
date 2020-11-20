@@ -20,6 +20,24 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+.submit-button {
+  position: absolute;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  border: none;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  background: #A58BFE;
+  color: white;
+}
+  .submit-button:hover {
+  background: #9678FE;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
 .home-search {
   align-items: center;
   position: relative;
