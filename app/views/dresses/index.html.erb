@@ -29,10 +29,9 @@
           <div class="dress-card-info">
             <h3><%= dress.name.upcase %></h3>
             <p><%= dress.description %></p>
-            <p><%= dress.price %></p>
-            <p><%= dress.currency %></p>
+            <p><%= dress.price %> <%= dress.currency %> </p>
             <p><%= dress.size %></p>
-            <p><%= dress.retail_price %></p>
+            <p>Retail: <%= dress.retail_price %> <%= dress.currency %> </p>
             <p><% dress.event_type %></p>
           </div>
         </div>
