@@ -5,14 +5,17 @@
   </div>
   <div class="booking-info">
     <div class="d-flex justify-content-around">
-    <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
+      <% if @dress.photos.any? %>
+        <%= cl_image_tag @dress.photos.first.key, height: 300, width: 200, crop: :fill, class: "show-photo" %>
+      <% end %>
     </div>
     <div class="booking">
-      <p>Booking Confirmation #: <%= @booking.id %></p>
-      <p>Dress Name: <%= @dress.name %></p>
-      <p>Order Total: <%= @dress.price %></p>
-      <p>Start Date: <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
-      <p>End Date: <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+      <h3><%= @dress.name.upcase %></h3>
+      <br>
+      <p><strong>BOOKING CONFIRMATION #:</strong> <%= @booking.id %></p>
+      <p><strong>ORDER TOTAL:</strong> <%= @dress.price %> <%= @dress.currency %></p>
+      <p><strong>FROM:</strong> <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
+      <p><strong>TO:</strong> <%= @booking.created_date.strftime("%A, %B %e, %Y") %></p>
     </div>
   </div>
 </div>
