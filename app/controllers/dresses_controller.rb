@@ -41,7 +41,7 @@ class DressesController < ApplicationController
 
   def destroy
     @dress.destroy
-    redirect_to dresses_path
+    redirect_to user_path(@dress.user)
   end
 
   private
