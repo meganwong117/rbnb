@@ -48,6 +48,16 @@ a:hover {
   padding-bottom:16px;
 }
 
+.card-grid{
+  display: grid;
+  position: relative;
+  left: 20px;
+  padding-bottom:5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  width: 480px;
+}
+
 .dress-card {
   overflow: hidden;
   background: white;

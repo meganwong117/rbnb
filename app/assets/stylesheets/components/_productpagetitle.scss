@@ -16,6 +16,9 @@
   justify-content: center;
 }
 
+.title{
+  text-center: center;
+}
 
 .left {
   height: 100vh;
@@ -25,6 +28,7 @@
 
 .right {
   height: 100vh;
+  padding:60px
 }
 
 #dress-booking-form {
@@ -43,8 +47,44 @@
   text-decoration: underline;
 }
 
-.description {
-  margin-top: 50px;
-  left: 40%;
-  text-decoration: bold
+.links{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  top:60px;
+  margin-top: 150px;
 }
+.description {
+  margin-top: 15px;
+  text-decoration: bold;
+  font-size: 16px !important;
+}
+
+#titles {
+  padding-top: 100px;
+}
+
+#homepage-title {
+  font-size: 60px;
+}
+
+.home-buttons {
+  font-size: 14px !important;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#button-transparency {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: #A58BFE;
+a {
+  color: #A58BFE !important;
+}
+}
+
+.title-text {
+ padding-left: 60px;
+}
+
+

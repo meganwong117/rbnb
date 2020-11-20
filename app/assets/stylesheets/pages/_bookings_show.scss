@@ -6,31 +6,36 @@
   width: 800px;
   background-color: white;
   padding: 30px;
+  padding-right: 45px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  & tr {
-    border-style: hidden;
-  }
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+strong {
+  font-weight: bolder;
 }
 
 body {
   font-size: 16px;
+  font-weight: lighter;
 }
 
-h2 {
+h3 {
   color: gray !important;
+  font-weight: bolder;
 }
 
 .show-photo {
   align-items: left;
+  padding: 8px;
 }
 
 .booking-container {
   margin-top: 60px;
   margin-bottom: 90px;
-  padding: 0px 80px;
+  padding: 0px 120px;
 }
