@@ -1,20 +1,19 @@
 <div id="home" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://wwd.com/wp-content/uploads/2018/09/bkstg-elie-saab-rtw-spring-2019-paris-fashion-week-pfw-044.jpg); margin-top: -15px; margin-bottom: 50px;">
-  <div class="banner-header pl-5">
-    <div class="row">
-      <div class="callout col-sm-4">
-        <h1>DressBnB</h1>
-        <div class ="description">
-          <p>You've got plans?</p>
-          <p>Dress to Impress</p>
+  <div class="banner-header">
+    <div class="row m-0">
+      <div class="callout col-sm-5" id="titles">
+        <div class= "title-text">
+          <h1 id= "homepage-title"><strong>DressBnB</strong></h1>
+          <p class="description">Got plans? The perfect space to Dress and Impress!</p>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="buttons col-sm-4">
-        <div class="btn btn-flat mr-3">
+    <div class="row m-0">
+      <div class="col-sm-4 pl-5">
+        <div class="btn btn-flat mr-3 home-buttons">
           <%= link_to 'Rent a Dress', dresses_path %>
         </div>
-        <div class="btn btn-flat">
+        <div class="btn btn-flat home-buttons ml-2" id="button-transparency">
           <%= link_to 'Become a Lender', new_dress_path %>
         </div>
       </div>
